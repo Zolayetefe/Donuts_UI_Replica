@@ -12,7 +12,8 @@ class MyTab extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(color: Colors.grey[200],
               borderRadius: BorderRadius.circular(20)),
-              child: Image.asset(iconPath,),
+              child: Image.asset(iconPath,
+              fit: BoxFit.contain,),
             ),
     );
   }

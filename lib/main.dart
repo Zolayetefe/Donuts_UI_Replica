@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'tab/bergur_tab.dart';
+import 'tab/donut_tab.dart';
+import 'tab/pizza_tab.dart';
 import 'util/my_tab.dart';
 
 void main() {
@@ -33,9 +36,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   
-  List<Widget> myTabs = [ const MyTab(iconPath:"donutImg/donut.png"),
-                        const MyTab(iconPath:"donutImg/donut.png"),
-                         const MyTab(iconPath:"donutImg/donut.png")];
+  List<Widget> myTabs = [ const MyTab(iconPath:'assets/donutImg/donut.png'),
+                        const MyTab(iconPath:'assets/donutImg/burger.png'),
+                         const MyTab(iconPath:'assets/donutImg/pizza.png')];
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +71,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text("  EAT",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),)
               ],
               ),),
-              TabBar(tabs:myTabs)
+              TabBar(tabs:myTabs),
+             const Expanded(
+                child: TabBarView(children: [
+                  DonutTab(
+                  ),
+                  BergurTab(),
+                  PizzaTab()
+                ]),
+              )
           ],
         ),
       ),
