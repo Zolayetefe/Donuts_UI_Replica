@@ -36,9 +36,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   
-  List<Widget> myTabs = [ const MyTab(iconPath:'assets/donutImg/donut.png'),
-                        const MyTab(iconPath:'assets/donutImg/burger.png'),
-                         const MyTab(iconPath:'assets/donutImg/pizza.png')];
+  List<Widget> myTabs = [ const MyTab(iconPath:'assets/donut/donut.png'),
+                        const MyTab(iconPath:'assets/burger/burger.png'),
+                         const MyTab(iconPath:'assets/pizza/pizza.png')];
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               ),),
               TabBar(tabs:myTabs),
-             const Expanded(
+              Expanded(
                 child: TabBarView(children: [
-                  DonutTab(
-                  ),
+                  DonutTab( ),
                   BergurTab(),
                   PizzaTab()
                 ]),
